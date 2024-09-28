@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* You can add global styles to this file, and also import other style files */
-@import "bootswatch/dist/Pulse/variables";
+// @import "bootswatch/dist/Pulse/variables";
 @import "bootstrap/scss/bootstrap";
-@import "bootswatch/dist/Pulse/bootswatch";
+// @import "bootswatch/dist/Pulse/bootswatch";
+* {
+  margin: 0;
+  padding: 0;
+  font: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

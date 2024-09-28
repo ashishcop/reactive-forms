@@ -1,0 +1,50 @@
+<div class="container">
+  <form [formGroup]="signUp" (ngSubmit)="submit()">
+    <div class="form-group">
+      <section>
+        <div>SignUp</div>
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" placeholder="Username" />
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Password" />
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" formControlName="confirmPassword" class="form-control " placeholder="Confirm password"
+          [ngClass]="{'is-invalid': signUp.get('password')?.hasError}" ] />
+        <div class="invalid-feedback">
+          Password don't matach
+        </div>
+      </section>
+      <section formGroupName="address">
+        <label for="street">Street</label>
+        <input type="text" formControlName="street" class="form-control" placeholder="street" />
+        <label for="city">City</label>
+        <input type="text" formControlName="city" class="form-control" placeholder="city" />
+        <label for="state">State</label>
+        <select type="text" formControlName="state" class="form-control" placeholder="state">
+          <option value="" disabled>
+            Choose State
+          </option>
+          <option value="ES">
+            ES
+          </option>
+          <option value="NY">
+            NY
+          </option>
+        </select>
+        <label for="zip">Zip</label>
+        <input type="text" formControlName="zip" class="form-control" placeholder="zip" />
+      </section>
+
+    </div>
+    <p>
+      <button class="btn btn-success" type="submit" [disabled]="signUp.invalid">
+        <i class="fa fa-home"></i> Save</button>
+    </p>
+  </form>
+  <p>
+    Form Status : {{ signUp.status }}
+  </p>
+  <pre>
+        {{ signUp.value | json }}
+    </pre>
+</div>
